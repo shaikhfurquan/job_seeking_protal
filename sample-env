@@ -1,7 +1,12 @@
 PORT = 5800
+
 MONGO_URL = "mongodb://0.0.0.0:27017/"
-DB_NAME = "job-seeking-portal"
-JWT_SECRET = "user_secret"
+DB_NAME = "Job-Seeking-DB"
+
+JWT_SECRET = "JFJ85RU43FJSJDR98SD"
+JWT_EXPIRY = "7d"
+COOKIE_EXPIRE = ""
+
 NODE_ENV = "development"
 FRONTEND_URL = 'http://localhost:7777/'
 
@@ -9,3 +14,5 @@ FRONTEND_URL = 'http://localhost:7777/'
 CLOUDINARY_NAME = ''
 CLOUDINARY_API_KEY = ''
 CLOUDINARY_SECRET = ''
+
+

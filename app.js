@@ -4,6 +4,10 @@ import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import fileUpload from 'express-fileupload'
 import dotenv from 'dotenv'
+import { errorMiddleware } from './middlewares/error.js'
+
+// importing the routes
+import userRouter from './routes/userRouter.js'
 
 dotenv.config()
 
@@ -26,5 +30,14 @@ app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : "/tmp/"
 }))
+
+
+// routes
+app.use('/api/v1/user' , userRouter)
+
+
+// Error middleware
+app.use(errorMiddleware)
+
 
 export default app
