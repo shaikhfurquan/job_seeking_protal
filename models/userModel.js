@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, "Please provide the Name"],
-        minLength: [3, "Name at least contains 2 characters"],
+        minLength: [3, "Name at least contains 3 characters"],
         maxLength: [30, "Name cannot exceed 30 characters"]
     },
     email: {
@@ -50,12 +50,12 @@ userSchema.methods.comparePassword = async function (enteredPassword) {
 
 // Generating the JWT token
 userSchema.methods.getJwtToken = function () {
-    return JWT.sign({ _id: this._id }, process.env.JWT_SECRET, {
+    return JWT.sign({ _id: this._id }, process.env.JWT_SECRET_KEY, {
         expiresIn: process.env.JWT_EXPIRY
     })
 }
 
-const UserModel = mongoose.Model('User', userSchema)
+const UserModel = mongoose.model('User', userSchema)
 
 
 export default UserModel 
