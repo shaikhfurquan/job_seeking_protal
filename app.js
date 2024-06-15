@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import fileUpload from 'express-fileupload'
 import dotenv from 'dotenv'
-import { errorMiddleware } from './middlewares/error.js'
+import { errorMiddleware } from './middlewares/errorHandler.js'
 
 // importing the routes
 import userRouter from './routes/userRouter.js'
